@@ -1,17 +1,19 @@
 const path = require('node:path');
+const { createJsWithTsEsmPreset } = require('ts-jest')
 
 const esmModules = ['wouter'];
 
 module.exports = {
   testEnvironment: 'node',
-  transform: {
-    '^.+\\.[tj]sx?$': [
-      'ts-jest',
-      {
-        useESM: true,
-      },
-    ],
-  },
+  ...createJsWithTsEsmPreset(),
+  // transform: {
+  //   '^.+\\.[tj]sx?$': [
+  //     'ts-jest',
+  //     {
+  //       useESM: true,
+  //     },
+  //   ],
+  // },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   transformIgnorePatterns: [
     `<rootDir>/node_modules/.pnpm/(?!(${esmModules.join('|')})@)`,
