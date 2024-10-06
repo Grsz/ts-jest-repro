@@ -1,0 +1,10 @@
+{
+  "exclude": ["node_modules"],
+  "extends": "./vite.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "tsBuildInfoFile": ".tsbuildinfo"
+  },
+  "include": ["src", "vite.config.ts", "codegen.ts", "tailwind.config.ts"]
+}
